@@ -13,8 +13,8 @@ func main() {
 	fmt.Printf("%v, %T\n\n", c, c)*/
 
 	var conferenceName string = "Go Conference"
-	const conferenceTickets int = 50
-	var remainingTickets int = conferenceTickets
+	const conferenceTickets uint = 50
+	var remainingTickets uint = conferenceTickets
 
 	fmt.Printf("Welcome to %v booking application\n", conferenceName)
 	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
