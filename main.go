@@ -26,6 +26,8 @@ func main() {
 	var userTickets uint
 	// ask user for name
 
+	var bookings []string
+
 	fmt.Print("Enter your first name: ")
 	fmt.Scan(&firstName) // Passing the reference
 
@@ -39,6 +41,7 @@ func main() {
 	fmt.Scan(&userTickets)
 
 	remainingTickets -= userTickets
+	bookings = append(bookings, firstName + " " + lastName)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 	fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
