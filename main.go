@@ -29,13 +29,13 @@ func main() {
 	fmt.Print("Enter your first name: ")
 	fmt.Scan(&firstName) // Passing the reference
 
-	fmt.Print("\nEnter your last name: ")
+	fmt.Print("Enter your last name: ")
 	fmt.Scan(&lastName)
 
-	fmt.Print("\nEnter your email address: ")
+	fmt.Print("Enter your email address: ")
 	fmt.Scan(&email)
 
-	fmt.Print("\nEnter number of tickets: ")
+	fmt.Print("Enter number of tickets: ")
 	fmt.Scan(&userTickets)
 
 	fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v", firstName, lastName, userTickets, email)
