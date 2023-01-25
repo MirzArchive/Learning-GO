@@ -23,10 +23,9 @@ func main() {
 	var userName string
 	var userTickets int
 	// ask user for name
+	// fmt.Println(&conferenceName)
 
-	fmt.Println(&conferenceName)
-
-	fmt.Scan(userName)
+	fmt.Scan(&userName) // Passing the reference
 	userTickets = 3
 	fmt.Printf("User %v booked %v tickets.\n", userName, userTickets)
 }
