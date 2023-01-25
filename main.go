@@ -11,7 +11,7 @@ func main() {
 	fmt.Println("Welcome to our conference booking application")
 	fmt.Println("Get your tickets here to attend")
 
-	fmt.Printf("%v, %T", a, a)
-	fmt.Printf("%v, %T", b, b)
-	fmt.Printf("%v, %T", c, c)
+	fmt.Printf("%v, %T\n", a, a)
+	fmt.Printf("%v, %T\n", b, b)
+	fmt.Printf("%v, %T\n", c, c)
 }
