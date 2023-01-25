@@ -8,10 +8,13 @@ func main() {
 	b = 6.89
 	c := "I like eating meat"
 
-	fmt.Println("Welcome to our conference booking application")
-	fmt.Println("Get your tickets here to attend")
-
 	fmt.Printf("%v, %T\n", a, a)
 	fmt.Printf("%v, %T\n", b, b)
-	fmt.Printf("%v, %T\n", c, c)
+	fmt.Printf("%v, %T\n\n", c, c)
+
+	var conferenceName = "Go Conference"
+
+	fmt.Println("Welcome to", conferenceName, "booking application")
+	fmt.Println("Get your tickets here to attend")
+
 }
