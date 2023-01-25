@@ -24,7 +24,9 @@ func main() {
 	var userTickets int
 	// ask user for name
 
-	userName = "Donda"
+	fmt.Println(&conferenceName)
+
+	fmt.Scan(userName)
 	userTickets = 3
 	fmt.Printf("User %v booked %v tickets.\n", userName, userTickets)
 }
