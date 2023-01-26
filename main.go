@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"GO-Learning/method"
 )
 
 func main() {
@@ -19,7 +20,7 @@ func main() {
 	const conferenceTickets uint = 50
 	var remainingTickets uint = conferenceTickets
 
-	greetUser(conferenceName, conferenceTickets, remainingTickets)
+	method.GreetUser(conferenceName, conferenceTickets, remainingTickets)
 
 	var firstName string
 	var lastName string
@@ -66,7 +67,7 @@ func main() {
 		fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
-		fmt.Printf("These are all our bookings: %v\n", getFirstName(bookings))
+		fmt.Printf("These are all our bookings: %v\n", method.GetFirstName(bookings))
 
 		if remainingTickets <= 0 {
 			fmt.Println("Our conference is booked out. Please come back next year.")
