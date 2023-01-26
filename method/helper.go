@@ -2,7 +2,6 @@ package method
 
 import (
 	"fmt"
-	"strings"
 )
 
 func GreetUser(name string, quotaTickets uint, availableTickets uint) { // -> Pascal Case naming for exporting
@@ -11,11 +10,15 @@ func GreetUser(name string, quotaTickets uint, availableTickets uint) { // -> Pa
 	fmt.Println("Get your tickets here to attend")
 }
 
-func GetFirstName(bookingNames []string) []string {
+func GetFirstName(bookings map[string]string) []string {
 	var firstName []string
-	for _, booking := range bookingNames { // _ -> blank identifier
-		name := strings.Fields(booking)
-		firstName = append(firstName, name[0])
+	for key, booking := range bookings { // _ -> blank identifier
+		switch key {
+		case "firstName":
+			firstName = append(firstName, booking)
+		default:
+			continue
+		}
 	}
 	return firstName
 }
