@@ -38,14 +38,27 @@ func main() {
 		fmt.Print("Enter your last name: ")
 		fmt.Scan(&lastName)
 
+		var isValidName bool = len(firstName) >= 2 && len(lastName) >= 2
+		if !isValidName {
+			fmt.Println("First Name or Last Name should atleast contain 2 character, try again.")
+			continue
+		}
+
 		fmt.Print("Enter your email address: ")
 		fmt.Scan(&email)
+
+		var isValidEmail bool = strings.Contains(email, "@")
+		if !isValidEmail {
+			fmt.Println("Email should contain @ character, try again.")
+			continue
+		}
 
 		fmt.Print("Enter number of tickets: ")
 		fmt.Scan(&userTickets)
 
-		if userTickets > remainingTickets {
-			fmt.Printf("Weh only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
+		var isValidTicketnumber bool = userTickets > 0 && userTickets <= remainingTickets
+		if !isValidTicketnumber {
+			fmt.Printf("We only have %v tickets remaining, so you can't book %v tickets\n", remainingTickets, userTickets)
 			continue
 		}
 
@@ -68,6 +81,6 @@ func main() {
 			break
 		}
 
-	} 
+	}
 
 }
