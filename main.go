@@ -19,9 +19,7 @@ func main() {
 	const conferenceTickets uint = 50
 	var remainingTickets uint = conferenceTickets
 
-	fmt.Printf("Welcome to %v booking application\n", conferenceName)
-	fmt.Printf("We have total of %v tickets and %v are still available\n", conferenceTickets, remainingTickets)
-	fmt.Println("Get your tickets here to attend")
+	greetUser(conferenceName, conferenceTickets, remainingTickets)
 
 	var firstName string
 	var lastName string
@@ -83,4 +81,10 @@ func main() {
 
 	}
 
+}
+
+func greetUser(name string, quotaTickets uint, availableTickets uint) {
+	fmt.Printf("Welcome to %v booking application\n", name)
+	fmt.Printf("We have total of %v tickets and %v are still available\n", quotaTickets, availableTickets)
+	fmt.Println("Get your tickets here to attend")
 }
