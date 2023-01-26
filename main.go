@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"strings"
 	"GO-Learning/method"
+	"fmt"
+	"strconv"
+	"strings"
 )
 
 func main() {
@@ -62,6 +63,13 @@ func main() {
 		}
 
 		remainingTickets -= userTickets
+
+		var userData = make(map[string]string)
+		userData["firstName"] = firstName
+		userData["lastName"] = lastName
+		userData["email"] = email
+		userData["ticket"] = strconv.FormatUint(uint64(userTickets), 10)
+
 		bookings = append(bookings, firstName+" "+lastName)
 
 		fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
