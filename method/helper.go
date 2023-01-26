@@ -10,15 +10,10 @@ func GreetUser(name string, quotaTickets uint, availableTickets uint) { // -> Pa
 	fmt.Println("Get your tickets here to attend")
 }
 
-func GetFirstName(bookings map[string]string) []string {
+func GetFirstName(bookings []map[string]string) []string {
 	var firstName []string
-	for key, booking := range bookings { // _ -> blank identifier
-		switch key {
-		case "firstName":
-			firstName = append(firstName, booking)
-		default:
-			continue
-		}
+	for _, booking := range bookings { // _ -> blank identifier
+		firstName = append(firstName, booking["firstName"])
 	}
 	return firstName
 }
