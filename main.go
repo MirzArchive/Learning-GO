@@ -29,7 +29,13 @@ func main() {
 	var userTickets uint
 	// ask user for name
 
-	var bookings = make([]map[string]string, 0)
+	type UserData struct {
+		firstName string
+		lastName string
+		email string
+		numberOfTickets uint32
+	}
+	var bookings = make([]UserData, 0)
 
 	for {
 		fmt.Print("Enter your first name: ")
@@ -64,11 +70,11 @@ func main() {
 
 		remainingTickets -= userTickets
 
-		var userData = make(map[string]string)
-		userData["firstName"] = firstName
-		userData["lastName"] = lastName
-		userData["email"] = email
-		userData["ticket"] = strconv.FormatUint(uint64(userTickets), 10)
+		// var userData = make(map[string]string)
+		// userData["firstName"] = firstName
+		// userData["lastName"] = lastName
+		// userData["email"] = email
+		// userData["ticket"] = strconv.FormatUint(uint64(userTickets), 10)
 
 		bookings = append(bookings, userData)
 
