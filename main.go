@@ -1,11 +1,16 @@
 package main
 
 import (
-	"GO-Learning/method"
 	"fmt"
-	"strconv"
 	"strings"
 )
+
+type UserData struct {
+	firstName string
+	lastName string
+	email string
+	numberOfTickets uint
+}
 
 func main() {
 	/*var a int = 60
@@ -21,7 +26,7 @@ func main() {
 	const conferenceTickets uint = 50
 	var remainingTickets uint = conferenceTickets
 
-	method.GreetUser(conferenceName, conferenceTickets, remainingTickets)
+	GreetUser(conferenceName, conferenceTickets, remainingTickets)
 
 	var firstName string
 	var lastName string
@@ -29,12 +34,6 @@ func main() {
 	var userTickets uint
 	// ask user for name
 
-	type UserData struct {
-		firstName string
-		lastName string
-		email string
-		numberOfTickets uint32
-	}
 	var bookings = make([]UserData, 0)
 
 	for {
@@ -76,12 +75,19 @@ func main() {
 		// userData["email"] = email
 		// userData["ticket"] = strconv.FormatUint(uint64(userTickets), 10)
 
-		bookings = append(bookings, userData)
+		var user  = UserData {
+			firstName: firstName,
+			lastName: lastName,
+			email: email,
+			numberOfTickets: userTickets,
+		}
+
+		bookings = append(bookings, user)
 
 		fmt.Printf("Thank you %v %v for booking %v tickets. You will receive a confirmation email at %v\n", firstName, lastName, userTickets, email)
 		fmt.Printf("%v tickets remaining for %v\n", remainingTickets, conferenceName)
 
-		fmt.Printf("These are all our bookings: %v\n", method.GetFirstName(bookings))
+		fmt.Printf("These are all our bookings: %v\n", GetFirstName(bookings))
 
 		if remainingTickets <= 0 {
 			fmt.Println("Our conference is booked out. Please come back next year.")
