@@ -43,4 +43,29 @@ func main() {
 	}(29, 3, 21, 9, 6, 5)
 	println(rttAvg)
 	println(countE2E())
+	println()
+
+	// A function which takes a closure function as the parameter.
+	// Generally its called a callback function but im not sure
+	pluckEvenNum := func(checker func(num int) bool, numbers ...int) []int {
+		evenNum := []int{}
+		for _, num := range numbers {
+			if checker(num) {
+				evenNum = append(evenNum, num)
+			}
+		}
+
+		return evenNum
+	}
+
+	arr := pluckEvenNum(func(num int) bool {
+		if num%2 == 0 {
+			return true
+		}
+		return false
+	}, 1, 12, 453, 21, 564, 32, 85, 32, 98, 10, 234)
+
+	for _, item := range arr {
+		println(item)
+	}
 }
