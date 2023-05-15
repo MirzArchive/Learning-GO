@@ -11,4 +11,6 @@ func main() {
 	for i, s := range str {
 		pf("%d : %#U : %c\n", i, s, s)
 	}
+
+	pl("Test from Remote Dev Container!")
 }
