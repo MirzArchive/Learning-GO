@@ -18,6 +18,17 @@ func main() {
 	fmt.Println("withError:", c)
 
 	fmt.Println("unlimitedParams:", unlimitedParams(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+	arrInt := []int{1, 2, 3, 4, 5}
+	fmt.Println("The sum is", pointerArray(&arrInt))
+	fmt.Println("The array", arrInt)
+
+	var d int = 2
+	fmt.Println("Number :", d)
+	pointerVariable(&d)
+	fmt.Println("Modified to:", d)
+
+	fmt.Println(returnWithPointer(1, 2))
 }
 
 func getOne(n int) int {
@@ -44,4 +55,23 @@ func unlimitedParams(numbers ...int) int {
 	}
 
 	return sum
+}
+
+func pointerArray(arr *[]int) int {
+	var sum int
+	for i, number := range *arr {
+		sum += number
+		(*arr)[i]++
+	}
+
+	return sum
+}
+
+func pointerVariable(n *int) {
+	*n++
+}
+
+func returnWithPointer(a int, b int) *int {
+	var result int = a + b
+	return &result
 }
