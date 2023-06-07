@@ -19,4 +19,15 @@ func main() {
 	for i := 0; i < len(arr1); i++ {
 		fmt.Println(arr1[i])
 	}
+
+	arr3 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
+	arr4 := [3][2]int{
+		{1, 2},
+		{3, 4},
+		{5, 6},
+	}
+
+	for i := range arr3 {
+		fmt.Printf("arr 3: %v, arr4: %v\n", arr3[i], arr4[i])
+	}
 }
