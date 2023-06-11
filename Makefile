@@ -1,2 +1,0 @@
-say:
-	echo $(MESSAGE)
